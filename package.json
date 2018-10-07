@@ -18,6 +18,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://raycasters.github.io/marrow_api_test",
   "eslintConfig": {
     "extends": "react-app"
   },
