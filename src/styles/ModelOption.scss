@@ -1,0 +1,54 @@
+.Models{
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+
+  .Model-Option{
+    flex: 1;
+  }
+}
+
+.Text-Input{
+  display: block;
+  margin: 20px auto;
+  background: rgb(39, 39, 39);
+  padding: 8px 14px;
+  border: none;
+  color: white;
+}
+
+
+.Model-Buttons{
+  margin: 20px 0px;
+  padding: 4px 0px;
+
+  button{
+    background: #33ffeb;
+    border: none;
+    margin: 0px 5px;
+    padding: 4px 10px;
+    color: rgb(48, 0, 64);
+  }
+}
+
+.Model-Socket-Description{
+  code{
+    display: inline-block;
+    margin: 4px;
+  }
+}
+
+.Model-Socket-Listeners{
+  background: rgba(75, 3, 99, 0.993);
+  display: inline-block;
+  border-radius: 5px;
+  padding: 4px 6px;
+}
+
+.Model-Socket-Emitter{
+  background: rgba(87, 3, 116, 0.993);
+  display: inline-block;
+  margin: 20px 0px 40px 0px;
+  border-radius: 5px;
+  padding: 4px 6px;
+}

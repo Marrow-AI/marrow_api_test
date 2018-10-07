@@ -1,0 +1,24 @@
+.Top{
+  width: 100%;
+  text-align: center;
+  margin: 2rem 0px 0px 0px;
+}
+
+.Top-Logo{
+  height: 25px;
+}
+
+.CameraAndCanvas{
+  position: relative;
+  margin: 50px auto;
+  height: 250px;
+  
+  canvas{
+    position: absolute;
+    left: 0; 
+    right: 0;
+    top: 0px;
+    margin-left: auto; 
+    margin-right: auto; 
+  }
+}
