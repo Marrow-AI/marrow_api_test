@@ -1,14 +1,14 @@
 {
-  "main.css": "/marrow_api_test/static/css/main.dc9c4fba.chunk.css",
-  "main.js": "/marrow_api_test/static/js/main.5914ad0e.chunk.js",
-  "main.js.map": "/marrow_api_test/static/js/main.5914ad0e.chunk.js.map",
-  "static/js/1.f2552e5e.chunk.js": "/marrow_api_test/static/js/1.f2552e5e.chunk.js",
-  "static/js/1.f2552e5e.chunk.js.map": "/marrow_api_test/static/js/1.f2552e5e.chunk.js.map",
-  "runtime~main.js": "/marrow_api_test/static/js/runtime~main.bab9c598.js",
-  "runtime~main.js.map": "/marrow_api_test/static/js/runtime~main.bab9c598.js.map",
-  "static/media/logo.svg": "/marrow_api_test/static/media/logo.38a3ab71.svg",
-  "static/css/main.dc9c4fba.chunk.css.map": "/marrow_api_test/static/css/main.dc9c4fba.chunk.css.map",
-  "index.html": "/marrow_api_test/index.html",
-  "precache-manifest.203c7e0bc73af880b6fd442b01f2cf8f.js": "/marrow_api_test/precache-manifest.203c7e0bc73af880b6fd442b01f2cf8f.js",
-  "service-worker.js": "/marrow_api_test/service-worker.js"
+  "main.css": "/static/css/main.dc9c4fba.chunk.css",
+  "main.js": "/static/js/main.da025aac.chunk.js",
+  "main.js.map": "/static/js/main.da025aac.chunk.js.map",
+  "static/js/1.56d00a64.chunk.js": "/static/js/1.56d00a64.chunk.js",
+  "static/js/1.56d00a64.chunk.js.map": "/static/js/1.56d00a64.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
+  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
+  "static/media/logo.svg": "/static/media/logo.38a3ab71.svg",
+  "static/css/main.dc9c4fba.chunk.css.map": "/static/css/main.dc9c4fba.chunk.css.map",
+  "index.html": "/index.html",
+  "precache-manifest.95577a4ed9fab0fd9939d4935cf73a17.js": "/precache-manifest.95577a4ed9fab0fd9939d4935cf73a17.js",
+  "service-worker.js": "/service-worker.js"
 }
