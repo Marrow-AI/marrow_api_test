@@ -59,7 +59,7 @@ class ModelOption extends Component {
     this.setState({ loop }, () => {
       if (loop && socket) {
         console.log('emit to', emit)
-        socket.emit('get_pose', {
+        socket.emit(emit, {
           data: document.getElementById('videoCanvas').toDataURL('image/jpeg')
         });
       }

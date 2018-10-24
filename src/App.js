@@ -37,7 +37,7 @@ class App extends Component {
           <div className="Models">
             <ModelOption 
               name='DensePose'
-              url='http://107.21.18.29:22100/query'
+              url='https://densepose.api.marrow.raycaster.studio/query'
               emit='get_pose'
               listen='pose_update'
               receiveData={{
@@ -49,7 +49,7 @@ class App extends Component {
             />
             <ModelOption 
               name='Pix2PixHD'
-              url='http://107.21.18.29:55000/'
+              url='https://pix2pix.api.marrow.raycaster.studio/generate'
               emit='update_request'
               listen='update_response'
               receiveData={{
@@ -61,7 +61,7 @@ class App extends Component {
             />
             <ModelOption 
               name='AttnGAN'
-              url='http://107.21.18.29:3333/query'
+              url='https://t2i.api.marrow.raycaster.studio/query'
               emit='update_request'
               listen='update_response'
               receiveData={{
