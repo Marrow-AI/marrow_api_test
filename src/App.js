@@ -49,7 +49,7 @@ class App extends Component {
             />
             <ModelOption 
               name='Pix2PixHD'
-              url='https://pix2pix.api.marrow.raycaster.studio/generate'
+              url='http://ec2-18-234-49-43.compute-1.amazonaws.com:22100/query'
               emit='update_request'
               listen='update_response'
               receiveData={{
@@ -61,7 +61,7 @@ class App extends Component {
             />
             <ModelOption 
               name='AttnGAN'
-              url='https://t2i.api.marrow.raycaster.studio/query'
+              url='http://ec2-18-234-49-43.compute-1.amazonaws.com:3333/query'
               emit='update_request'
               listen='update_response'
               receiveData={{
