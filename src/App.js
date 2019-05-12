@@ -49,7 +49,7 @@ class App extends Component {
             />
             <ModelOption 
               name='Pix2PixHD'
-              url='http://ec2-18-234-49-43.compute-1.amazonaws.com:22100/query'
+              url='http://ec2-54-173-108-145.compute-1.amazonaws.com:22100/query'
               emit='update_request'
               listen='update_response'
               receiveData={{
@@ -61,7 +61,7 @@ class App extends Component {
             />
             <ModelOption 
               name='AttnGAN'
-              url='http://ec2-18-234-49-43.compute-1.amazonaws.com:3333/query'
+              url='http://ec2-54-173-108-145.compute-1.amazonaws.com:3333/query'
               emit='update_request'
               listen='update_response'
               receiveData={{
