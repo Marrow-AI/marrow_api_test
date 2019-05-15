@@ -20,13 +20,13 @@ class App extends Component {
           {
             context.model !== 'AttnGAN'
             ?
-              <div className="CameraAndCanvas"> 
+              <div className="CameraAndCanvas">
                 <Camera />
                 <Canvas />
               </div>
             :
-              <div className="CameraAndCanvas"> 
-                <img 
+              <div className="CameraAndCanvas">
+                <img
                   src={context.attnGANImg ? context.attnGANImg : whiteImg}
                   alt='attngan'
                   width={context.width}
@@ -35,9 +35,9 @@ class App extends Component {
               </div>
           }
           <div className="Models">
-            <ModelOption 
+            <ModelOption
               name='DensePose'
-              url='https://densepose.api.marrow.raycaster.studio/query'
+              url='http://ec2-52-90-130-102.compute-1.amazonaws.com:22100/query'
               emit='get_pose'
               listen='pose_update'
               receiveData={{
@@ -47,9 +47,9 @@ class App extends Component {
                 data: '<base64Image>'
               }}
             />
-            <ModelOption 
+            <ModelOption
               name='Pix2PixHD'
-              url='http://ec2-54-173-108-145.compute-1.amazonaws.com:22100/query'
+              url='http://ec2-52-90-130-102.compute-1.amazonaws.com:22100/query'
               emit='update_request'
               listen='update_response'
               receiveData={{
@@ -59,9 +59,9 @@ class App extends Component {
                 data: '<base64Image>'
               }}
             />
-            <ModelOption 
+            <ModelOption
               name='AttnGAN'
-              url='http://ec2-54-173-108-145.compute-1.amazonaws.com:3333/query'
+              url='http://ec2-52-90-130-102.compute-1.amazonaws.com:3333/query'
               emit='update_request'
               listen='update_response'
               receiveData={{
@@ -80,4 +80,3 @@ class App extends Component {
 }
 
 export default withContext(App);
-
