@@ -37,7 +37,7 @@ class App extends Component {
           <div className="Models">
             <ModelOption
               name='DensePose'
-              url='http://ec2-52-90-130-102.compute-1.amazonaws.com:22100/query'
+              url='http://ec2-3-211-0-139.compute-1.amazonaws.com:22100/pose'
               emit='get_pose'
               listen='pose_update'
               receiveData={{
@@ -49,7 +49,7 @@ class App extends Component {
             />
             <ModelOption
               name='Pix2PixHD'
-              url='http://ec2-52-90-130-102.compute-1.amazonaws.com:22100/query'
+              url='http://ec2-3-211-0-139.compute-1.amazonaws.com:22100/infer'
               emit='update_request'
               listen='update_response'
               receiveData={{

@@ -25,45 +25,84 @@ class ModelOption extends Component {
   
   connect() {
     const { url, name, context, emit, listen } = this.props;
-    
-    this.setState({ socket: io(url) }, () => {
-      this.state.socket.on('connect', () => {
-        console.log('connected to', name)
-      });
-      this.state.socket.on(listen, (data) => {
-        if (name === 'AttnGAN') {
-          context.setAttnGANImg("data:image/jpg;base64," + data.image)
-        } else {
-          const canvas = document.getElementById('resultCanvas');
-          const ctx = canvas.getContext('2d');
-          const img = new Image();
-          img.onload = () => {
-            ctx.drawImage(img, 0, 0, 340, 240);
-            if (this.state.loop) {
-              this.state.socket.emit(emit, {
-                data: document.getElementById('videoCanvas').toDataURL('image/jpeg')
-              });
+    if (name == 'AttnGAN') {
+        this.setState({ socket: io(url) }, () => {
+          this.state.socket.on('connect', () => {
+            console.log('connected to', name)
+          });
+          this.state.socket.on(listen, (data) => {
+            if (name === 'AttnGAN') {
+              context.setAttnGANImg("data:image/jpg;base64," + data.image)
+            } else {
+              const canvas = document.getElementById('resultCanvas');
+              const ctx = canvas.getContext('2d');
+              const img = new Image();
+              img.onload = () => {
+                ctx.drawImage(img, 0, 0, 340, 240);
+                if (this.state.loop) {
+                  this.state.socket.emit(emit, {
+                    data: document.getElementById('videoCanvas').toDataURL('image/jpeg')
+                  });
+                }
+              };
+              img.src = "data:image/jpg;base64," + data.results;
             }
-          };
-          img.src = "data:image/jpg;base64," + data.results;
-        }
-      });
-    })
+          });
+        })
+    }
   }
 
   handleStart(loop) {
     const { socket  } = this.state;
-    const { context, emit  } = this.props;
+    const { context, emit, url, name  } = this.props;
     context.setShowResultCanvas(loop);
+    console.log("Start", loop);
 
     this.setState({ loop }, () => {
-      if (loop && socket) {
-        console.log('emit to', emit)
-        socket.emit(emit, {
-          data: document.getElementById('videoCanvas').toDataURL('image/jpeg')
-        });
-      }
+        if (loop) {
+            this.fetch();
+        }
     })
+  }
+
+  fetch() {
+    const { socket, loop  } = this.state;
+    const { context, emit, url, name  } = this.props;
+    if (socket && name === 'AttnGAN') {
+        console.log('will emit to', emit)
+    } else {
+        console.log("Fetching");
+        fetch(url, {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json',
+                //'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body : JSON.stringify({
+                data: document.getElementById('videoCanvas').toDataURL('image/jpeg')
+            })
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            console.log("Data response!", data);
+            const canvas = document.getElementById('resultCanvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            img.onload = () => {
+              ctx.drawImage(img, 0, 0, 340, 240);
+            };
+            img.src = "data:image/jpg;base64," + data.results;
+
+            if (loop) {
+                this.fetch(loop);
+            }
+        })
+    }
+
   }
 
   render() {
