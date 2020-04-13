@@ -4,12 +4,12 @@ const AppContext = React.createContext()
 
 class AppProvider extends Component {
   state = {
-    model: '',
+    model: 'AttnGAN',
     setModel: (model) => this.setState({ model }),
     attnGANImg: undefined,
     setAttnGANImg: (attnGANImg) => this.setState({ attnGANImg }),
-    width: "340",
-    height: "240",
+    width: "512",
+    height: "512",
     showResultCanvas: false,
     setShowResultCanvas: (showResultCanvas) => this.setState({ showResultCanvas })
   }

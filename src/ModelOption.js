@@ -10,6 +10,7 @@ class ModelOption extends Component {
     loop: false
   }
 
+
   handleInputChange = (e) => {
     const { emit } = this.props;
 
@@ -38,7 +39,7 @@ class ModelOption extends Component {
               const ctx = canvas.getContext('2d');
               const img = new Image();
               img.onload = () => {
-                ctx.drawImage(img, 0, 0, 340, 240);
+                ctx.drawImage(img, 0, 0, 512, 512);
                 if (this.state.loop) {
                   this.state.socket.emit(emit, {
                     data: document.getElementById('videoCanvas').toDataURL('image/jpeg')
@@ -104,6 +105,12 @@ class ModelOption extends Component {
     }
 
   }
+
+  componentDidMount() {
+    if (this.props.context.model === this.props.name && !this.state.socket) {
+        this.connect();
+    }  
+  }  
 
   render() {
     const { inputText } = this.state;
